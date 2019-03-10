@@ -18,7 +18,6 @@ package trie;
  * which will be indexes by the triplet (3,3,3)
  * 
  * 
- * @author Sesh Venugopal
  *
  */
 class Indexes {
@@ -78,7 +77,6 @@ class Indexes {
  * - the first child node
  * - the sibling node
  * 
- * @author Sesh Venugopal
  *
  */
 public class TrieNode {
