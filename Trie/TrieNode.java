@@ -16,8 +16,6 @@ package trie;
  * Substrings may be single characters, as in the first "a" in "data", 
  * which will be indexed by the triplet (3,1,1), or the second "a" in "data", 
  * which will be indexes by the triplet (3,3,3)
- * 
- * 
  *
  */
 class Indexes {
@@ -76,8 +74,6 @@ class Indexes {
  * - an Indexes instance, pointing to the substring that is held at that node
  * - the first child node
  * - the sibling node
- * 
- *
  */
 public class TrieNode {
 
