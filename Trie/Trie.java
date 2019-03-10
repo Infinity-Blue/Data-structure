@@ -43,80 +43,73 @@ public class Trie
 				char ch = chArray[index]; //'c'
 				do {
 				boolean isExist = false;
-//			if( node == null ) {
-//				isExist = false;
-//				} 
-			
-//			else {//nodes exists 
 				String nodeWord = allWords[node.substr.wordIndex].substring(0, node.substr.endIndex+1); //node substring
-				if( node.substr.endIndex < index )
-				{ // check whether we can compare char of existing node and inserting node. 
-					isExist = false; 
-				} 
-				else 
-				{ // we can compare char of existing node and inserting node.
-					char nodeWordCh = nodeWord.charAt(index); 
-					if( nodeWordCh == ch ) 
-					{ 
-						isExist = true;
-					}  
-
-				}
-					
-			if( !isExist )
-			{ // common prefix NOT exists 
-			if( !bfExist ) 
-			{ // common prefix NOT exists 
-			if( node.sibling == null ) 
-			{
-			node.sibling = new TrieNode(new Indexes(wordIndex, (short)index, (short)(chArray.length - 1)), null, null);
-				node = root.firstChild; 
-					break break_label;  // break label to iterate over next item in allwords[]
-			}
-			else 
-			{ 
-				node = node.sibling; // compare node.sibiling with current inserting node. 
-			}
-			} 
-			 // Common prefix exist at previous char but NOT found at current index. "po ttery", "po ssible"
-			  else 
-			  {
-				bfExist = false;
-					if( node.firstChild == null ) 
-					{
-				node.substr.endIndex = (short)(index-1); // change endIndex of existing node.
-				node.firstChild = new TrieNode(new Indexes(node.substr.wordIndex, (short)index, (short)(allWords[node.substr.wordIndex].length() - 1)), null, null);
-				node.firstChild.sibling = new TrieNode(new Indexes(wordIndex, (short)index, (short)(chArray.length - 1)), null, null);
-				node = root.firstChild;
-				break break_label;  // wordindex = wordindex + 1; 
-					}
-			
-				else 
-				{ 
-					if( node.substr.endIndex < index ) 
-					{
-						node = node.firstChild;
+					if( node.substr.endIndex < index )
+					{ // check whether we can compare char of existing node and inserting node. 
+						isExist = false; 
 					} 
 					else 
-					{ 
-						node.firstChild = new TrieNode(new Indexes(node.substr.wordIndex, (short)index, (short)(node.substr.endIndex)), node.firstChild, null);
-						node.substr.endIndex = (short)(index-1);
-						node = node.firstChild;	
+					{ // we can compare char of existing node and inserting node.
+						char nodeWordCh = nodeWord.charAt(index); 
+						if( nodeWordCh == ch ) 
+						{ 
+						isExist = true;
+						}  
+
 					}
-				 }
-			   }
-			  }
-	        // isExist
-	        else
-	        {
-				bfExist = true;
-				break; // index = index +1; 
-			}
+					if( !isExist )
+					{ // common prefix NOT exists 
+						if( !bfExist ) 
+						{ // common prefix NOT exists 
+							if( node.sibling == null ) 
+							{
+								node.sibling = new TrieNode(new Indexes(wordIndex, (short)index, (short)(chArray.length - 1)), null, null);
+								node = root.firstChild; 
+								break break_label;  // break label to iterate over next item in allwords[]
+							}
+							else 
+							{ 
+								node = node.sibling; // compare node.sibiling with current inserting node. 
+							}
+						} 
+					 // Common prefix exist at previous char but NOT found at current index. "po ttery", "po ssible"
+						else 
+						{
+							bfExist = false;
+							if( node.firstChild == null ) 
+							{
+								node.substr.endIndex = (short)(index-1); // change endIndex of existing node.
+								node.firstChild = new TrieNode(new Indexes(node.substr.wordIndex, (short)index, (short)(allWords[node.substr.wordIndex].length() - 1)), null, null);
+								node.firstChild.sibling = new TrieNode(new Indexes(wordIndex, (short)index, (short)(chArray.length - 1)), null, null);
+								node = root.firstChild;
+								break break_label;  // wordindex = wordindex + 1; 
+							}
+							
+							else 
+							{ 
+								if( node.substr.endIndex < index ) 
+								{
+									node = node.firstChild;
+								} 
+								else 
+								{ 
+									node.firstChild = new TrieNode(new Indexes(node.substr.wordIndex, (short)index, (short)(node.substr.endIndex)), node.firstChild, null);
+									node.substr.endIndex = (short)(index-1);
+									node = node.firstChild;	
+								}
+							 }
+			 			}
+			 		 }
+	      		  // isExist
+					else
+					{
+						bfExist = true;
+						break; // index = index +1; 
+					}
 				} while (node != null);
-		 }
-	  } 		
-				
-     return root;
+		 	}
+	  	} 		
+				 return root;
 	}
 	
 	
@@ -138,12 +131,11 @@ public class Trie
 	 * 			order of leaf nodes does not matter.
 	 *         If there is no word in the tree that has this prefix, null is returned.
 	 */
-	public static ArrayList<TrieNode> completionList(TrieNode root,
-										String[] allWords, String prefix) 
+	public static ArrayList<TrieNode> completionList(TrieNode root, String[] allWords, String prefix) 
 	{
 		ArrayList<TrieNode> resultList = new ArrayList<>(); // for return 
 		TrieNode node = root.firstChild;
-        int beforeWordIndex = -1; 
+        	int beforeWordIndex = -1; 
 		
 		while ( node != null ) 
 		{
