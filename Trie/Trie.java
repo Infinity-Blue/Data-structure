@@ -2,11 +2,8 @@ package trie;
 
 import java.util.ArrayList;
 
-/**
+/*
  * This class implements a Trie. 
- * 
- * @author Sesh Venugopal
- *
  */
 public class Trie 
 {
