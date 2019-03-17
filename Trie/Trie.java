@@ -123,7 +123,7 @@ public class Trie
 	{
 		ArrayList<TrieNode> resultList = new ArrayList<>(); // for return 
 		TrieNode node = root.firstChild;
-        int beforeWordIndex = -1; 
+       		int beforeWordIndex = -1; 
 		
 		while ( node != null ) 
 		{
@@ -141,7 +141,6 @@ public class Trie
 				node = node.sibling;
 				continue; 
 			}
-			
 			if( word.indexOf(prefix) == 0 && beforeWordIndex != node.substr.wordIndex) 
 			{
 				beforeWordIndex = node.substr.wordIndex;
