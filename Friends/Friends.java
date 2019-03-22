@@ -1,8 +1,6 @@
 package friends;
-
 import structures.Queue;
 import structures.Stack;
-
 import java.util.*;
 
 public class Friends {
@@ -19,14 +17,9 @@ public class Friends {
 	 * @return The shortest chain from p1 to p2. Null if there is no
 	 *         path from p1 to p2
 	 */
-	public static ArrayList<String> shortestChain(Graph g, String p1, String p2) {
-	 // Traverse the neighbor of p1 and enqueue UNTIL we meet String p2.
-	// If we don't meet String p2 then 
-	//  Move queues to arrayList and return 
-	//int v = g.map.get(p1);
-	//for (Friend frd = g.members[v].first; frd!=null; frd=frd.next) {
-
-	ArrayList<String> path = new ArrayList<String>(); //for the return 
+	public static ArrayList<String> shortestChain(Graph g, String p1, String p2) 
+	{
+		ArrayList<String> path = new ArrayList<String>(); //for the return 
 		if (p1 == null || p2 == null)
 		{
 			return path;
@@ -91,30 +84,16 @@ public class Friends {
 	}
 	//
 	
-	private static Person getPerson(Graph g, String name) {
+	private static Person getPerson(Graph g, String name)
+	{
 		return g.members[g.map.get(name)];
 	}
 	
-	private static String getName (Graph g, Friend f) {
+	private static String getName (Graph g, Friend f) 
+	{
 		return g.members[f.fnum].name;
 	}
 	
-//    Queue<String>a = new Queue<String>();f
-//    ArrayList<String>path = new ArrayList<String>();//for the return;
-//    boolean [] visit = new boolean[g.members.length];
-//    for (int i=0; i<visit.length; i++) {
-//       
-//    }
-//    int i = g.map.get(p1);
-//    visit[i] = true;
-//    for (Friend frd = g.members[i].first; frd!=null; frd=frd.next) {
-//    	6
-//    	if (!visit[frd.fnum]) { 
-//          shortestChain(g, g.members[frd.fnum].name, p2);
-//    	}
-//    	else if (!visit)
-//    	
-    	//System.out.print
     
 	/**
 	 * Finds all cliques of students in a given school.
