@@ -1,6 +1,5 @@
 package trie;
-
-/**
+/*
  * This class encapsulates the set of 3 indexes that point to a substring 
  * stored in an array of strings. The array of strings is the collection of
  * words that are indexed by the trie. Each node of the trie will have an
@@ -16,10 +15,6 @@ package trie;
  * Substrings may be single characters, as in the first "a" in "data", 
  * which will be indexed by the triplet (3,1,1), or the second "a" in "data", 
  * which will be indexes by the triplet (3,3,3)
- * 
- * 
- * @author Sesh Venugopal
- *
  */
 class Indexes {
 	
@@ -72,14 +67,11 @@ class Indexes {
 	}
 }
 
-/**
+/*
  * This class encapsulates a compressed trie node with fields for the following:
  * - an Indexes instance, pointing to the substring that is held at that node
  * - the first child node
  * - the sibling node
- * 
- * @author Sesh Venugopal
- *
  */
 public class TrieNode {
 
