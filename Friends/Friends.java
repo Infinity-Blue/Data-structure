@@ -32,7 +32,7 @@ public class Friends {
 		{
 			return path;
 		}
-		//
+		
 		HashMap<String, String> prev = new HashMap<String, String>();
 		HashMap<String, Boolean> visited = new HashMap<String, Boolean>();
 		Queue<String> queue = new Queue<String>();
@@ -44,7 +44,6 @@ public class Friends {
 		queue.enqueue(p1);
 		visited.put(p1, true);
 		prev.put(p1, p1);
-		//
 		
 		while(!queue.isEmpty())
 		{
@@ -82,7 +81,7 @@ public class Friends {
 		}		
 		return path;
 	}
-	//
+	
 	
 	private static Person getPerson(Graph g, String name)
 	{
