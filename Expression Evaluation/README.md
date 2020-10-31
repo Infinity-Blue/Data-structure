@@ -1,6 +1,6 @@
-## Expression Evaluation
+# Expression Evaluation
 The program evaluates an arithmetic expression using Recursion and Stacks. 
-# Testing
+## Testing
 Running the Evaluator driver calls methods in Expression. There are two ways of testing:
 1. Enter any expressions for the evaluation.
 ```
