@@ -5,4 +5,4 @@ The program implements an undirected graph that represents friendships. Each ver
 * Return the person(connector) where at least two people must go through in order to reach each other. 
 
 ## Testing
-**FriendsTest.java** calls methods in **Friends.java** for testing.
+**FriendsTest.java** calls methods in **Friends.java** for testing the functions above. 
